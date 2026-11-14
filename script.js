@@ -1,16 +1,21 @@
 let title="project name"
-// эт чт 
-let screes="Простые, Сложные, Интерактивные"
-let screenPrice=Math.random()
-let rollBack=Math.random(1,100)
-let fullPrice=Math.random()
+let screens="Простые, Сложные, Интерактивные"
+let screenPrice=50000
+let rollback=24
+let fullPrice=100000
 let adaptive=true
 // имя проекта
-console.log("screen length is ",len(screens))
+// 1
+console.log(typeof title)
+console.log(typeof fullPrice)
+console.log(typeof adaptive)
+// 2
+console.log("screen length is ",screens.length)
 console.log("Стомость вёрстки экранов ",screenPrice, " $")
 console.log("Стомость разработки сайта ",fullPrice, " $")
-console.log(screes.toLowerCase().split(""))
+console.log(screens.toLowerCase().split(""))
 
-console.log("Процент отката ",(fullPrice/100))
+console.log("Процент отката ",(fullPrice * (rollback/100)) )
 
 // проверить домо и влить в lesson02
+
