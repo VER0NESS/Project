@@ -11,7 +11,6 @@ console.log("screen length is ",screens.length)
 console.log("Стомость вёрстки экранов ",screenPrice, " $")
 console.log("Стомость разработки сайта ",fullPrice, " $")
 console.log(screens.toLowerCase().split(""))
-
 console.log("Процент отката ",(fullPrice * (rollback/100)) )
 
 
