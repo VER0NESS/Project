@@ -9,18 +9,18 @@ let allServicePrices
 let fullPrice
 let servicePercentPrice
 const isNum=function(num){
-    return !isNan(parseFloat(num))
+    return !isNaN(parseFloat(num)) && isFinite(num)
 }
-console.log(!isNan(parseFloat(10)))
 const asking=function(){
     title=prompt("Как называется ваш проект?")
     screens=prompt("какие типы экранов разработать?")
     screenPrice=prompt("Сколько будет стоить данная работа?")
-    while(NaN(screenPrice)||screenPrice.trim()===""||screenPrice===null){
+    while(screenPrice===null||!isNum(screenPrice)||screenPrice.trim()===""){
         screenPrice= prompt("сколько будет стоить данная работа?")
     }
     adaptive=confirm("Нужен ли адаптив на сайте?")
 }
+asking()
 const getAllServicePrices=function(){
     let sum=0
     for(let i=0;i<2;i++){
