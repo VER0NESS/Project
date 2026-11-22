@@ -11,14 +11,15 @@ let servicePercentPrice
 const isNum=function(num){
     return !isNaN(parseFloat(num)) && isFinite(num)
 }
-const asking=function(){
-    title=prompt("Как называется ваш проект?")
-    screens=prompt("какие типы экранов разработать?")
-    screenPrice=prompt("Сколько будет стоить данная работа?")
-    while(screenPrice===null||!isNum(screenPrice)||screenPrice.trim()===""){
-        screenPrice= prompt("сколько будет стоить данная работа?")
+const asking = function() {
+    title = prompt("Как называется ваш проект?")
+    screens = prompt("какие типы экранов разработать?")
+    screenPrice = prompt("Сколько будет стоить данная работа?")
+    while (screenPrice === null || !isNum(screenPrice) || screenPrice.trim() === "") {
+        screenPrice = prompt("сколько будет стоить данная работа?")
     }
-    adaptive=confirm("Нужен ли адаптив на сайте?")
+    screenPrice = +screenPrice
+    adaptive = confirm("Нужен ли адаптив на сайте?")
 }
 asking()
 const getAllServicePrices=function(){
@@ -32,6 +33,7 @@ const getAllServicePrices=function(){
         }
         sum+= +prompt("Сколько это будет стоить?")
     }
+    return sum
 }
 const showTypeOf=function(x){
     console.log(x,typeof x)
@@ -47,13 +49,13 @@ const getTitle=function(){
 }
 const getRollbackMessage=function(x){
     if (x >= 30000) {
-    console.log("Даем скидку в 10%");
+    return("Даем скидку в 10%");
 } else if (x >= 15000 && x < 30000) {
-    console.log("Даем скидку в 5%");
+    return("Даем скидку в 5%");
 } else if (x >= 0 && x < 15000) {
-    console.log("Скидка не предусмотрена");
+    return("Скидка не предусмотрена");
 } else {
-    console.log("Что то пошло не так");
+    return("Что то пошло не так");
 }
 }
 allServicePrices=getAllServicePrices()
